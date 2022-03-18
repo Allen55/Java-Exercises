@@ -13,10 +13,8 @@ public class Main {
         try {
             System.out.print("Enter a whole number to divide: ");
             int x = scanner.nextInt();
-
             System.out.print("Enter a whole number to divide by: ");
             int y = scanner.nextInt();
-
             int z = x / y;
 
             System.out.println("result: " + z); // when y = 0, arithmetic exception
