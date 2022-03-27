@@ -5,12 +5,16 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        int[] array = new int[1000000];
-        int target = 77777;
+        int[] array = new int[100];
+
+
         for (int i = 0; i < array.length; i++) {
             array[i] = i;
         }
+
+        int target = 77;
         int index = binarySearch(array, target);
+
     }
 
     private static int binarySearch(int[] array, int target){
@@ -25,13 +29,24 @@ public class Main {
             count++;
             System.out.println("Step: " + count + " middle: " + value);
 
-            if (value < target) low = middle + 1;
-            else if (value > target) high = middle -1;
-            else return middle; // target is found
+            if (value < target) {
+                low = middle + 1;
+            }
+            else if (value > target) {
+                high = middle -1;
+            }
+            else {
+                return middle; // target is found
+            }
 
+            /*
+
+
+
+
+             */
 
         }
-
         return -1; // sentinal value, target not found
     }
 }
