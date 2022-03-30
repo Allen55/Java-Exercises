@@ -30,18 +30,18 @@ Incrementing by one gives 9 + 1 = 10.
 Thus, the result should be [1,0].
  */
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PlusOne {
 
 
     public static void main(String[] args) {
 
-        int[] array = {1,2,3}; // expected output should be [1,2,4]
+        int[] intArray = new int[8];
 
-        int last = array[array.length - 1];
-        array[last] = last + 1;
-        for (int x : array){
-            System.out.println(x);
-        }
+        List<Integer> intArrayList = new ArrayList();
+
 
     }
 }
