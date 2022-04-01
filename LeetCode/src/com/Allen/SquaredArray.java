@@ -18,21 +18,40 @@ Output: [4,9,9,49,121]
 
 public class SquaredArray {
 
-    public static int[] sortedSquares(int[] nums) {
-
-        int n = nums.length;
-        int temp = 0;
-
+    public static void sortedSquares(int[] nums) {
+        int mid = 0, n = nums.length;
         for (int i = 0; i < n; i++){
-            for (int j = 1; j < (n-i); j++){
-                if (nums[j-1] > nums[j]){
-                    temp = nums[j-1];      //swap elements
-                    nums[j-1] = nums[j];
-                    nums[j] = temp;
-                }
+            mid = i;
+            if(nums[i] >= 0){
+                break;
             }
         }
-        return nums;
+        int L = mid - 1, R = mid;
+        int[] arr = new int[n];
+        int index = 0;
+        while (0 <= L && R <= n - 1){
+            int Left = nums[L] * nums[L];
+            int Right = nums[R] * nums[R];
+            if(Left > Right){
+                arr[index] = Right;
+                R++;
+            } else {
+                arr[index] = Left;
+                L--;
+            }
+            index++;
+        }
+        while(0 <= L){
+            arr[index++] = nums[L] * nums[L];
+            L--;
+        }
+        while(R <= n - 1) {
+            arr[index++] = nums[R] * nums[R];
+            R++;
+        }
+        for (int s : arr){
+            System.out.print(s + " ");
+        }
     }
 
 
@@ -46,11 +65,9 @@ public class SquaredArray {
             System.out.print(intArray[i] + " ");
         }
         System.out.println(" ");
+
         sortedSquares(intArray);
-        System.out.println("Array after sort: ");
-        for (int i = 0; i < intArray.length; i++){
-            System.out.print(intArray[i] + " ");
-        }
+
     }
 
 
