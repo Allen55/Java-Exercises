@@ -24,13 +24,32 @@ package com.Allen;
  */
 
 public class RemoveDuplicates {
-    public int removeDuplicates(int[] nums) {
+    public static int removeDuplicates(int[] nums) {
+        // base case
+        int n = nums.length;
+        if (n < 2) return 2;
 
-        return 0;
+        // define pointers
+        int L = 0, R = 1;
+
+        // remove dup in place
+        while(R < n){
+            if (nums[L] != nums[R]){
+                L++;
+                nums[L] = nums[R];
+            }
+            R++;
+        }
+        // return size of the subarray
+
+        return L + 1;
     }
 
     public static void main(String[] args) {
 
+
+        int[] sortedIntArray = {1,1,2};
+        System.out.println(removeDuplicates(sortedIntArray));
     }
 }
 
