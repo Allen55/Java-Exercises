@@ -23,10 +23,47 @@ Explanation: The first and only string that is palindromic is "racecar".
 
 public class FirstPalindrome {
 
+
     public static String firstPalindrome(String[] words) {
+        for(String word : words){
+            if(isPalindrome(word)){
+                return word;
+            }
+        }
+        return "";
+    }
+
+    private static boolean isPalindrome(String str){
+
+        int i = 0;
+        int j = str.length() - 1;
+        while(i < j){
+            if (str.charAt(i) == str.charAt(j)){
+                i++;
+                j--;
+                continue;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
 
 
-        for(int i = 0; i < words.length; i++){
+
+    public static void main(String[] args) {
+
+        String[] stringArray = {"abc", "car", "ada", "racecar", "cool"};
+        firstPalindrome(stringArray);
+
+    }
+}
+
+
+
+
+
+/*for(int i = 0; i < words.length; i++){
 
             int j = 0, k = words[i].length() - 1;
             String currentWord = words[i];
@@ -40,14 +77,4 @@ public class FirstPalindrome {
                 return "found";
             }
         }
-        return "No palindrome found";
-    }
-
-    public static void main(String[] args) {
-
-        String[] stringArray = {"abc", "car","ada","racecar","cool"};
-
-        firstPalindrome(stringArray);
-
-    }
-}
+        return "No palindrome found";*/
