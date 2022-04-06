@@ -36,4 +36,7 @@ public class ReverseString {
         reverseString(s);
 
     }
+
+    public static class RemoveZeroes {
+    }
 }

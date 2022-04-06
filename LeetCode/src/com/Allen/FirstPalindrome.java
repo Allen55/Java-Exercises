@@ -54,7 +54,7 @@ public class FirstPalindrome {
     public static void main(String[] args) {
 
         String[] stringArray = {"abc", "car", "ada", "racecar", "cool"};
-        firstPalindrome(stringArray);
+        System.out.println(firstPalindrome(stringArray));
 
     }
 }
