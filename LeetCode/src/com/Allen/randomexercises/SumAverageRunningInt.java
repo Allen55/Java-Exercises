@@ -19,5 +19,6 @@ public class SumAverageRunningInt {
             count+=i;
         }
         System.out.println(count / max);
+
     }
 }
